@@ -42,7 +42,7 @@ const reserveSeats = async (req, res) => {
     res.status(201).json({
       success: true,
       message: "Seats reserved successfully",
-      reservation,
+      reservationId: reservation._id,
     });
   } catch (error) {
     res.status(500).json({

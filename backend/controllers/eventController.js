@@ -3,12 +3,14 @@ const Seat = require("../models/Seat");
 
 const createEvent = async (req, res) => {
   try {
-    const { title, venue, date } = req.body;
+    const { title, description, imageUrl, venue, eventDate } = req.body;
 
     const event = await Event.create({
       title,
+      description,
+      imageUrl,
       venue,
-      date,
+      eventDate,
     });
 
     const seats = [];
@@ -28,6 +30,7 @@ const createEvent = async (req, res) => {
 
     res.status(201).json({
       success: true,
+      message: "Event created successfully",
       event,
       seatsCreated: seats.length,
     });
@@ -37,6 +40,10 @@ const createEvent = async (req, res) => {
       message: error.message,
     });
   }
+};
+
+module.exports = {
+  createEvent,
 };
 
 const getAllEvents = async (req, res) => {
