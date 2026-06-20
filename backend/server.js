@@ -26,6 +26,8 @@ app.use("/api/reservations", reservationRoutes);
 app.use("/api/bookings", bookingRoutes);
 
 startReservationCleanup();
-app.listen(9000, () => {
-  console.log("Server Running");
+const PORT = process.env.PORT || 9000;
+
+app.listen(PORT, () => {
+  console.log(`Server Running on port ${PORT}`);
 });
