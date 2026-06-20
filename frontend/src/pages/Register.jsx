@@ -165,7 +165,7 @@ function Register() {
             <p className="text-sm text-zinc-500">
               Already have an account?{" "}
               <Link
-                to="/login"
+                to="/"
                 className="font-medium text-rose-400 hover:text-rose-300 transition-colors duration-150 underline decoration-rose-500/30 underline-offset-4"
               >
                 Sign in instead
