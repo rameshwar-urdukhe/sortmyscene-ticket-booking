@@ -33,7 +33,7 @@ function Register() {
       
       // Elegant timed routing transition to give users clear UX feedback
       setTimeout(() => {
-        navigate("/login");
+        navigate("/");
       }, 2000);
     } catch (error) {
       setErrorMessage(
